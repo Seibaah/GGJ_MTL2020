@@ -43,9 +43,13 @@ func _physics_process(delta):
 	else:
 		play_anim("jump")
 	
+	#select_seed
+	if Input.is_action_just_pressed("select_next_seed"):
+		pass
 	#plant_seed
 	if Input.is_action_just_pressed("plant_seed"):
 		pass
+	
 
 func flip():
 	facing_right = !facing_right
