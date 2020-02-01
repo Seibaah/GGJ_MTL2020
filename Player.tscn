@@ -44,16 +44,16 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 187.228, 134.867 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 394.345, 442.34 )
+position = Vector2( -3.9097, -0.342468 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 397.008, 448.907 )
+position = Vector2( -1.24734, 6.22467 )
 shape = SubResource( 2 )
-
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
@@ -61,7 +61,7 @@ anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 393.069, 456.687 )
+position = Vector2( -5.18652, 14.0048 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 6 )
 animation = "walk_reverse"

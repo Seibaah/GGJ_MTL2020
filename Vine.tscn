@@ -12,15 +12,18 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
+"loop": false,
 "name": "growing",
 "speed": 5.0
 } ]
 
 [node name="Vine" type="KinematicBody2D"]
+position = Vector2( 147.639, 88.1735 )
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 529.041, 34.8593 )
+position = Vector2( 2.6524, -107.869 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "growing"
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
