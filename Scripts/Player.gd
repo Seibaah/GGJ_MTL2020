@@ -1,30 +1,69 @@
-extends Node#placeholder
+extends KinematicBody2D
 
-const WALK_SPEED = 250
+const MOVE_SPEED = 250
+const JUMP_FORCE = 800
+const GRAVITY = 50
+const MAX_FALL_SPEED = 1000
 
+onready var anim_player = $AnimationPlayer
+onready var sprite = $Sprite
 var linear_vel = Vector2()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var y_velo = 0
+var facing_right = false
 
-func _process(delta):
-	
-	### CONTROL ###
-
-	# Horizontal movement
-	var target_speed = 0
-	if Input.is_action_pressed("move_left"):
-		target_speed -= 1
+func _physics_process(delta):
+	var move_dir = 0
 	if Input.is_action_pressed("move_right"):
-		target_speed += 1
-
-	target_speed *= WALK_SPEED
+		move_dir += 1
+	if Input.is_action_pressed("move_left"):
+		move_dir -= 1
+	move_and_slide(Vector2(move_dir * MOVE_SPEED, y_velo), Vector2(0, -1))
 	
-	#jump
-	if Input.is_action_just_pressed("jump"):
-		pass
+	var grounded = is_on_floor()
+	
+	y_velo += GRAVITY
+	if grounded and Input.is_action_just_pressed("jump"):
+		y_velo = -JUMP_FORCE
+	if grounded and y_velo >= 5:
+		y_velo = 5
+	if y_velo > MAX_FALL_SPEED:
+		y_velo = MAX_FALL_SPEED
+	
+	if facing_right and move_dir < 0:
+		flip()
+	if !facing_right and move_dir > 0:
+		flip()
+	
+	if grounded:
+		if move_dir == 0:
+			play_anim("idle")
+		else:
+			play_anim("walk")
+	else:
+		play_anim("jump")
 	
 	#plant_seed
 	if Input.is_action_just_pressed("plant_seed"):
 		pass
+
+func flip():
+	facing_right = !facing_right
+	sprite.flip_h = !sprite.flip_h
+
+func play_anim(anim_name):
+	if anim_player.is_playing() and anim_player.current_animation == anim_name:
+		return
+	anim_player.play(anim_name)
+	
+func place_platform():
+	#spwan a static tile underneath the player
+	
+	var curr_pos = position
+	var plat = load("res://Platform.tscn")
+	var platform = plat.instance()
+	add_child_below_node(get_tree().get_root().get_node("TileMap"), platform)
+	
+
+		
+		
