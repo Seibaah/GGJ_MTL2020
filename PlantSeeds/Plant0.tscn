@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://PlantSeeds/Plant0.gd" type="Script" id=1]
-[ext_resource path="res://Assets/PlaceholderSprites/arbre.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/vine.007.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.0939, 10 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "grow"
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+
+[sub_resource type="Animation" id=4]
+resource_name = "wither"
+
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="Plant0" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -12,10 +23,25 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.92659, -3.24303 )
+position = Vector2( -1.85313, 4.16963 )
 rotation = 1.50406
 scale = Vector2( 0.175638, 0.130041 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="TargetUIPosition" type="Position2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/grow = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/wither = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"vine_impact",
+]]
+position = Vector2( 53.2785, -0.463287 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )

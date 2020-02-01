@@ -1,25 +1,85 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Sprites/vine.001.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/vine.004.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/vine.006.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/vine.003.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/vine.007.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/vine.002.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/vine.005.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/vineSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Vine.gd" type="Script" id=8]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "growing",
-"speed": 5.0
-} ]
+[sub_resource type="Animation" id=3]
+resource_name = "grow"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("vinesprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 4, 5, 6, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 14.6489, 20.179, 19.012, 26.003, 36.195, 72.459, 69.67 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 20.0, 154.085, 212.403, 370.443, 695.303, 645.091, 765.931 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6.13358, -27.0131 ), Vector2( 8.164, -102.639 ), Vector2( 9.331, -136.464 ), Vector2( 0.739, -212.358 ), Vector2( -18.788, -365.782 ), Vector2( -18.788, -365.782 ), Vector2( 6.356, -440.342 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 69.67
+height = 765.931
 
 [node name="Vine" type="KinematicBody2D"]
+position = Vector2( 0.0322876, 4.15796 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 8 )
 
+<<<<<<< HEAD
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "growing"
+=======
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/grow = SubResource( 3 )
+
+[node name="vinesprite" type="Sprite" parent="."]
+position = Vector2( 11.3503, -386.769 )
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6.356, -440.342 )
+shape = SubResource( 1 )
+>>>>>>> 046929c42cf4d5d8268a5270a8414907ce247f01

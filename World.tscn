@@ -25,7 +25,11 @@ __meta__ = {
 }
 
 [node name="Vine" parent="TileMap" instance=ExtResource( 4 )]
+<<<<<<< HEAD
 position = Vector2( 111.724, 128.913 )
 
 [node name="World_complete" parent="." instance=ExtResource( 5 )]
 position = Vector2( 904.843, 529.155 )
+=======
+position = Vector2( 531.523, 572.112 )
+>>>>>>> 046929c42cf4d5d8268a5270a8414907ce247f01
