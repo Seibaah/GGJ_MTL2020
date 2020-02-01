@@ -21,6 +21,5 @@ animations = [ {
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 529.041, 34.8593 )
 frames = SubResource( 1 )
 animation = "growing"
