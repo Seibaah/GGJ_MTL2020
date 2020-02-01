@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sprites/spirit.005_reverse.png" type="Texture" id=3]
@@ -11,12 +11,6 @@
 [ext_resource path="res://Assets/Sprites/spirit.001.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/spirit.001_reverse.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/spirit.002.png" type="Texture" id=12]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.9746, 55.8843 )
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 59.5435
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -32,20 +26,25 @@ loop = true
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk_reverse",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk_reverse",
-"speed": 5.0
 } ]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 40.0
+height = 40.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 187.228, 134.867 )
 script = ExtResource( 2 )
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.9097, -0.342468 )
@@ -61,7 +60,10 @@ anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -5.18652, 14.0048 )
+
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 6 )
-animation = "walk_reverse"
+animation = "New Anim"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource( 7 )

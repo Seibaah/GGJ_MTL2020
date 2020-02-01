@@ -1,16 +1,39 @@
 extends KinematicBody2D
 
+var is_planted:bool = false
+var is_withered:bool = false
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var is_growing:bool = false
+export var plant_id:int = 0
+export var direction_growth:Vector2 = Vector2(0,0)
+export var impact_force = 50
+
+const HAS_GROWN = "has_grown"
+const HAS_WITHERED = "has_withered"
+const HAS_PUSHED_PLAYER = "has_pushed_player"
+signal has_grown
+signal has_withered
+signal has_pushed_player
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _physics_process(delta):
+	if is_growing:
+		var bodies = $Area2D.get_overlapping_bodies()
+		for a_body in bodies:
+			if a_body.is_in_group("player"):
+				var pushed_player = a_body
+				emit_signal("has_pushed_player", self, pushed_player)
 
+func shrug():
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func wither():
+	self.hide()
+	is_growing = false
+
+func grow():
+	self.show()
+	is_growing = true
+
+func stop_growing():
+	is_growing = true
