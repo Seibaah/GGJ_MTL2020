@@ -13,10 +13,10 @@
 [ext_resource path="res://Assets/Sprites/spirit.002.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.9746, 55.8843 )
+extents = Vector2( 37.5501, 55.8843 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 59.5435
+radius = 34.4289
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -32,7 +32,7 @@ loop = true
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -47,13 +47,12 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 394.345, 442.34 )
+position = Vector2( 406.451, 426.865 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 397.008, 448.907 )
+position = Vector2( 404.585, 460.926 )
 shape = SubResource( 2 )
-
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
@@ -61,7 +60,7 @@ anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 393.069, 456.687 )
+position = Vector2( 402.906, 448.131 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 6 )
 animation = "walk_reverse"
