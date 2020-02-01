@@ -17,9 +17,5 @@ __meta__ = {
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 47.7136, 381.708 )
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
-current = true
-smoothing_enabled = true
-
 [node name="World_complete" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 986.08, 281.737 )

@@ -27,10 +27,6 @@ position = Vector2( 259.633, 185.452 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1920, 1080 )
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
-current = true
-smoothing_enabled = true
-
 [node name="Label" type="Label" parent="TileMap"]
 margin_right = 40.0
 margin_bottom = 14.0

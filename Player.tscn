@@ -65,3 +65,7 @@ position = Vector2( -5.18652, 14.0048 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 6 )
 animation = "walk_reverse"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
