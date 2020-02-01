@@ -16,6 +16,21 @@ tile_data = PoolIntArray( 0, 1, 0, 15, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1
 [node name="Player" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 352.897, 198.676 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap/Player"]
+follow_viewport_enable = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="TileMap/Player/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="TileMap/Player/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 259.633, 185.452 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+current = true
+smoothing_enabled = true
+
 [node name="Label" type="Label" parent="TileMap"]
 margin_right = 40.0
 margin_bottom = 14.0
