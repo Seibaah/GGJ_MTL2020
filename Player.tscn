@@ -54,6 +54,7 @@ shape = SubResource( 1 )
 position = Vector2( 397.008, 448.907 )
 shape = SubResource( 2 )
 
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
 anims/jump = SubResource( 4 )
