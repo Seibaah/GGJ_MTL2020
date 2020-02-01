@@ -5,12 +5,13 @@ const JUMP_FORCE = 800
 const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
 
-onready var anim_player = $AnimationPlayer
-onready var sprite = $Sprite
+#onready var anim_player = $AnimationPlayer
+onready var anim_player = $AnimatedSprite
+onready var sprite = $AnimatedSprite
 var linear_vel = Vector2()
 
 var y_velo = 0
-var facing_right = false
+var facing_right = true
 
 func _physics_process(delta):
 	var move_dir = 0
@@ -52,7 +53,7 @@ func flip():
 	sprite.flip_h = !sprite.flip_h
 
 func play_anim(anim_name):
-	if anim_player.is_playing() and anim_player.current_animation == anim_name:
+	if anim_player.is_playing() and anim_player.animation == anim_name:
 		return
 	anim_player.play(anim_name)
 	
