@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/Sprites/vineSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Vine.gd" type="Script" id=8]
 
-
 [sub_resource type="Animation" id=3]
 resource_name = "grow"
 length = 0.8
