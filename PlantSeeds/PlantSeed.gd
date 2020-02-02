@@ -17,28 +17,35 @@ func _ready():
 	$AnimationPlayer.play("default")
 	
 
-func _process(_delta):
-	### SHRUG IF THE PLAYER IS CLOSE
-	var bodies_close = $DetectionArea2D.get_overlapping_bodies()
-	for a_body in bodies_close:
-		if a_body.is_in_group("player"):
-			self.shrug()
+#func _process(_delta):
+
+#	### SHRUG IF THE PLAYER IS CLOSE
+#	var bodies_close = $DetectionArea2D.get_overlapping_bodies()
+#	for a_body in bodies_close:
+#		if a_body.is_in_group("player"):
+#			self.shrug()
 
 func get_available_plants():
 	return available_plants
 
 func display_as_target():
 	$TargetedSprite.show()
-
-func hide_as_target():
-	$TargetedSprite.hide()
-
-func shrug():
 	if $SeedSprite.visible:
 		if $AnimationPlayer.assigned_animation != "shrug":
 			$AnimationPlayer.play("shrug")
-	elif current_plant != null:
-		current_plant.shrug()
+
+func hide_as_target():
+	$TargetedSprite.hide()
+	if $SeedSprite.visible:
+		if $AnimationPlayer.assigned_animation != "default":
+			$AnimationPlayer.play("default")
+
+#func shrug():
+#	if $SeedSprite.visible:
+#		if $AnimationPlayer.assigned_animation != "shrug":
+#			$AnimationPlayer.play("shrug")
+#	elif current_plant != null:
+#		current_plant.shrug()
 
 func grow_plant(ori):
 	if  is_withered:
