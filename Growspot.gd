@@ -1,14 +1,19 @@
 extends Node2D
 
+const vineScene = preload("res://Vine.tscn")
 
-onready var anim_player = $AnimationPlayer
+
+#TODO
+#connect to node asking growth to call _on_growth request
 
 
-func _physics_process(delta):
-	#plant_seed
-	#if Input.is_action_pressed("select_spot"):
-		anim_player.play("anim")
-		
-func _on_AnimatedSprite_animation_finished():
-	anim_player.stop()
 
+func _ready():
+	$AnimationPlayer.play("effervescence")
+
+func _on_growth_request(vine_rotation):#orientation is an int 
+	var vineInstance = vineScene.instance()
+	vineInstance.transform(rotate(vine_rotation))
+	self.add_child(vineInstance)
+	$Sprite.hide()
+	$AnimationPlayer.stop()
