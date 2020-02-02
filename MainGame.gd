@@ -1,11 +1,12 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World", "World-2"]
+var world_scenes_array = ["World", "World-2", "World-2"]
 
 var current_player = null
-var current_world_id = 0
+var current_world_id = 1
 var current_world = null
 var selected_seed = null
+var is_loading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,16 +20,36 @@ func _process(delta):
 	#world stuff
 	update_targeted_seed()
 
+func load_next_level():
+	current_world_id += 1
+	if current_world_id < world_scenes_array.size():
+		load_level(current_world_id, Vector2(0,0))
+
 func load_level(level_id, player_start_pos):
+	if current_player != null:
+		current_player.queue_free()
+	if current_world != null:
+		current_world.queue_free()
+	
 	#Load the level
 	var new_world_scene = load("res://" + world_scenes_array[level_id] + ".tscn")
 	var new_world = new_world_scene.instance()
 	self.add_child(new_world)
+	current_world = new_world
+	
+	var world_completers = get_tree().get_nodes_in_group("WorldCompleter")
+	for a_completer in world_completers:
+		a_completer.connect("ask_next_level", self, "_on_ask_next_level")
 	
 	#Load the player
 	var new_player = player_scene.instance()
 	self.global_position.x = player_start_pos.x
 	self.global_position.y = player_start_pos.y
+	if player_start_pos == Vector2(-1,-1):
+		var level_player_start = current_world.get_node("StartPosition2D")
+		if level_player_start != null:
+			new_player.global_position.x = level_player_start.global_position.x
+			new_player.global_position.y = level_player_start.global_position.y
 	self.add_child(new_player)
 	#Connect the players
 	if new_player != null:
@@ -45,11 +66,13 @@ func load_level(level_id, player_start_pos):
 ### WORLD FUNCTIONS ###
 
 func update_targeted_seed():
+	if is_loading:
+		return
 	#target the closest seed to the player
 	if current_player == null:
 		return
 	var seeds = get_tree().get_nodes_in_group("seed")
-	var min_distance = 20000
+	var min_distance = 700
 	var closest_distance = min_distance
 	var new_seed_target = null
 	for a_seed in seeds:
@@ -77,3 +100,11 @@ func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it
 	if selected_seed != null:
 		selected_seed.grow_plant(orientation)
+
+func _on_ask_next_level():
+	#if !is_loading:
+	#	is_loading = true
+	
+	#current_world.queue_free()
+	#current_world = null
+	load_next_level()
