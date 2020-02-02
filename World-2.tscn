@@ -37,8 +37,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+
 [node name="World_complete" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 986.08, 281.737 )
+
+[node name="PlantSeed" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 823.23, 551.836 )
+
+[node name="PlantSeed2" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 52.9866, 537.62 )
+
+[node name="PlantSeed3" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 619.038, 307.581 )
+
+[node name="PlantSeed4" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 273.979, 312.75 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3.1734, 0 )

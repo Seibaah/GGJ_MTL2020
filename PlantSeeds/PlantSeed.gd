@@ -11,6 +11,7 @@ const HAS_GROWN = "has_grown"
 const HAS_WITHERED = "has_withered"
 signal has_grown
 signal has_withered
+signal has_pushed_player
 
 func _ready():
 	$AnimationPlayer.play("default")
