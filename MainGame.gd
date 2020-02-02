@@ -1,6 +1,8 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
+
 var world_scenes_array = [ "World-4","World-3", "World-2" ]
+
 
 var current_player = null
 var current_world_id = 0
@@ -39,7 +41,7 @@ func load_level(level_id, player_start_pos):
 	
 	#Load the level
 	print("res://" + world_scenes_array[level_id] + ".tscn")
-	var new_world_scene = load("res://" + world_scenes_array[level_id] + ".tscn")
+	var new_world_scene = load("res://Levels/" + world_scenes_array[level_id] + ".tscn")
 	var new_world = new_world_scene.instance()
 	self.add_child(new_world)
 	current_world = new_world
