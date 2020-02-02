@@ -13,7 +13,8 @@ const push_force_x = 600
 const push_force_y = 350
 
 var motion = Vector2()
-var is_dashing = false
+var is_dashing_right = false
+var is_dashing_left = false
 
 signal has_planted
 signal has_planted_left
@@ -42,22 +43,22 @@ func _physics_process(_delta):
 			die()
 
 	play_anim("walk")
-	if !is_dashing:
-		if Input.is_action_pressed("move_right"):
-			motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
-		elif Input.is_action_pressed("move_left"):
-			motion.x = max (motion.x - ACCELERATION, -MAX_CONTROL_SPEED)
-		else: 
-			friction = true
+
+	if Input.is_action_pressed("move_right") and !is_dashing_right:
+		motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
+	elif Input.is_action_pressed("move_left") and !is_dashing_left:
+		motion.x = max (motion.x - ACCELERATION, -MAX_CONTROL_SPEED)
+	else: 
+		friction = true
 
 	
-	if !is_on_floor() and !is_dashing:
-		if Input.is_action_just_pressed("dash_right"):
-			is_dashing = true
+	if !is_on_floor() :
+		if Input.is_action_just_pressed("dash_right") and !is_dashing_right:
+			is_dashing_right = true
 			$DashTimer.start()
 			motion.x = DASH_SPEED
-		elif Input.is_action_just_pressed("dash_left"):
-			is_dashing = true
+		elif Input.is_action_just_pressed("dash_left") and !is_dashing_left:
+			is_dashing_left = true
 			$DashTimer.start()
 			motion.x = -DASH_SPEED
 	
@@ -167,4 +168,5 @@ func die():
 
 
 func _on_DashTimer_timeout():
-	is_dashing = false
+	is_dashing_right = false
+	is_dashing_left = false

@@ -21,9 +21,57 @@ outline_size = 3
 outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
 font_data = ExtResource( 3 )
 
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=12]
+size = 40
+outline_size = 3
+outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+
+[sub_resource type="DynamicFont" id=14]
+size = 40
+outline_size = 3
+outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+
+[sub_resource type="DynamicFont" id=16]
+size = 40
+outline_size = 3
+outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 130
+outline_size = 2
+outline_color = Color( 0.129412, 0.12549, 0.12549, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="Theme" id=20]
+
 [sub_resource type="StyleBoxEmpty" id=21]
 
-[sub_resource type="StyleBoxEmpty" id=22]
+[sub_resource type="DynamicFont" id=22]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxEmpty" id=23]
 
@@ -31,84 +79,37 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxEmpty" id=25]
 
-[sub_resource type="DynamicFont" id=26]
-size = 40
-outline_size = 3
-outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxEmpty" id=26]
 
-[sub_resource type="StyleBoxTexture" id=7]
-
-[sub_resource type="DynamicFont" id=8]
-size = 40
-outline_size = 3
-outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-
-[sub_resource type="DynamicFont" id=10]
-size = 40
-outline_size = 3
-outline_color = Color( 0.145098, 0.121569, 0.121569, 1 )
-font_data = ExtResource( 3 )
-[sub_resource type="DynamicFont" id=11]
-size = 130
-outline_size = 2
-outline_color = Color( 0.129412, 0.12549, 0.12549, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=36]
-
-[sub_resource type="StyleBoxEmpty" id=37]
-
-[sub_resource type="Theme" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="DynamicFont" id=14]
-size = 20
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="StyleBoxEmpty" id=15]
-
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="StyleBoxEmpty" id=17]
-
-[sub_resource type="StyleBoxEmpty" id=18]
-
-[sub_resource type="StyleBoxEmpty" id=19]
-
-[sub_resource type="DynamicFont" id=20]
-size = 20
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=27]
-
-[sub_resource type="StyleBoxEmpty" id=35]
+[sub_resource type="StyleBoxEmpty" id=27]
 
 [sub_resource type="DynamicFont" id=28]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=29]
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
+[sub_resource type="DynamicFont" id=31]
 size = 20
 outline_size = 3
 outline_color = Color( 0.0117647, 0.0470588, 0.0352941, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxEmpty" id=29]
-
-[sub_resource type="StyleBoxEmpty" id=30]
-
-[sub_resource type="StyleBoxEmpty" id=31]
-
 [sub_resource type="StyleBoxEmpty" id=32]
 
 [sub_resource type="StyleBoxEmpty" id=33]
 
-[sub_resource type="DynamicFont" id=34]
+[sub_resource type="StyleBoxEmpty" id=34]
+
+[sub_resource type="StyleBoxEmpty" id=35]
+
+[sub_resource type="StyleBoxEmpty" id=36]
+
+[sub_resource type="DynamicFont" id=37]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -157,12 +158,12 @@ margin_left = 385.0
 margin_top = 298.0
 margin_right = 598.0
 margin_bottom = 362.0
-custom_styles/hover = SubResource( 21 )
-custom_styles/pressed = SubResource( 22 )
-custom_styles/focus = SubResource( 23 )
-custom_styles/disabled = SubResource( 24 )
-custom_styles/normal = SubResource( 25 )
-custom_fonts/font = SubResource( 26 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Controls"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,8 +178,8 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -193,8 +194,8 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -205,7 +206,7 @@ margin_left = 347.617
 margin_top = 35.653
 margin_right = 635.617
 margin_bottom = 117.653
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 17 )
 text = "Abitibi"
 align = 1
 valign = 1
@@ -219,8 +220,8 @@ margin_left = 344.0
 margin_top = 185.0
 margin_right = 637.0
 margin_bottom = 475.0
-theme = SubResource( 36 )
-custom_styles/panel = SubResource( 37 )
+theme = SubResource( 18 )
+custom_styles/panel = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,9 +231,9 @@ margin_left = -67.4738
 margin_top = 20.7802
 margin_right = 403.526
 margin_bottom = 196.78
-theme = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
+theme = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+custom_fonts/font = SubResource( 22 )
 text = "Chris, Sleepless Artist
 Alexandre, GitMaster
 Denis, Programmer in the master
@@ -249,12 +250,12 @@ margin_left = 82.0
 margin_top = 216.0
 margin_right = 194.0
 margin_bottom = 256.0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/focus = SubResource( 25 )
+custom_styles/disabled = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
 text = "Quit Credits"
 
 [node name="Controls_panel" type="Panel" parent="."]
@@ -263,8 +264,8 @@ margin_left = 294.185
 margin_top = 199.093
 margin_right = 723.185
 margin_bottom = 562.093
-theme = SubResource( 27 )
-custom_styles/panel = SubResource( 35 )
+theme = SubResource( 29 )
+custom_styles/panel = SubResource( 30 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -274,7 +275,7 @@ margin_left = 35.7925
 margin_top = 27.0
 margin_right = 391.793
 margin_bottom = 338.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 31 )
 text = "Keybords :
 
 A/D ---> Left/Right
@@ -296,12 +297,12 @@ margin_left = 327.808
 margin_top = 1.58505
 margin_right = 427.808
 margin_bottom = 51.5851
-custom_styles/hover = SubResource( 29 )
-custom_styles/pressed = SubResource( 30 )
-custom_styles/focus = SubResource( 31 )
-custom_styles/disabled = SubResource( 32 )
-custom_styles/normal = SubResource( 33 )
-custom_fonts/font = SubResource( 34 )
+custom_styles/hover = SubResource( 32 )
+custom_styles/pressed = SubResource( 33 )
+custom_styles/focus = SubResource( 34 )
+custom_styles/disabled = SubResource( 35 )
+custom_styles/normal = SubResource( 36 )
+custom_fonts/font = SubResource( 37 )
 text = "Quit"
 [connection signal="pressed" from="NewGame" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_Controls_pressed"]
