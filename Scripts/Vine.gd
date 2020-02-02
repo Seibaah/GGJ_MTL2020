@@ -35,6 +35,7 @@ func wither():
 
 func grow():
 	self.show()
+	$AnimationPlayer.play("grow")
 	is_growing = true
 
 func stop_growing():

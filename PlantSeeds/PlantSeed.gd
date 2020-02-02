@@ -5,6 +5,7 @@ var is_planted:bool = false
 var is_withered:bool = false
 var current_plant = null
 
+const VINE_RESOURCE = preload("res://Vine.tscn")
 const HAS_GROWN = "has_grown"
 const HAS_WITHERED = "has_withered"
 signal has_grown
@@ -12,6 +13,7 @@ signal has_withered
 
 func _ready():
 	$AnimationPlayer.play("default")
+	
 
 func _process(_delta):
 	### SHRUG IF THE PLAYER IS CLOSE
@@ -48,13 +50,14 @@ func grow_plant(orientation):
 func force_grow_plant(orientation):
 
 	$SeedSprite.hide()
-	var target_plant = self.get_node("Plants/Plant0")
+	var target_plant = VINE_RESOURCE.instance()
+	self.add_child(target_plant)
 #	var plants =  $Plants.get_children()
 #	if is_planted:
 #		for a_plant in plants:
 #			if a_plant != target_plant:
 #				a_plant.wither()
-	target_plant.grow()
+	
 	current_plant = target_plant
 	is_planted = true
 	

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PlantSeeds/PlantSeed.gd" type="Script" id=1]
-[ext_resource path="res://PlantSeeds/Plant0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sprites/growSpotspritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/PlaceholderSprites/nounTarget.png" type="Texture" id=4]
 
@@ -67,23 +66,6 @@ hframes = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
 position = Vector2( 1.94794, 3.89603 )
 shape = SubResource( 1 )
-
-[node name="Plants" type="Node2D" parent="."]
-
-[node name="Plant0" parent="Plants" instance=ExtResource( 2 )]
-visible = false
-
-[node name="Plant1" parent="Plants" instance=ExtResource( 2 )]
-visible = false
-plant_id = 1
-
-[node name="Plant2" parent="Plants" instance=ExtResource( 2 )]
-visible = false
-plant_id = 2
-
-[node name="Plant3" parent="Plants" instance=ExtResource( 2 )]
-visible = false
-plant_id = 3
 
 [node name="TargetedSprite" type="Sprite" parent="."]
 visible = false
