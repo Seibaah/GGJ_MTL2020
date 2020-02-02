@@ -1,14 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/growSpotspritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Growspot.gd" type="Script" id=2]
-[ext_resource path="res://Spot_clicable.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 78.6766
-height = 85.8909
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "effervescence"
 loop = true
 tracks/0/type = "value"
@@ -25,20 +20,14 @@ tracks/0/keys = {
 }
 
 [node name="Growspot" type="Node2D"]
-position = Vector2( 494.163, 477.295 )
+position = Vector2( 2.20901, 2.15988 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -22.6578, -475.813 )
+position = Vector2( -6.85171, -221.132 )
+scale = Vector2( 0.355453, 0.45236 )
 texture = ExtResource( 1 )
 hframes = 3
-frame = 2
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite"]
-position = Vector2( 24.7112, 456.819 )
-shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/effervescence = SubResource( 2 )
-[connection signal="item_rect_changed" from="Sprite/CollisionShape2D" to="Sprite" method="_on_CollisionShape2D_item_rect_changed"]
+anims/effervescence = SubResource( 1 )

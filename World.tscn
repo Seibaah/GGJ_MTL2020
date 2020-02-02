@@ -35,3 +35,4 @@ position = Vector2( 506.127, 262.352 )
 position = Vector2( 787.27, 472.178 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
+position = Vector2( -230.426, -57.997 )

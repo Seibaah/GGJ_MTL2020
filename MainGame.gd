@@ -9,7 +9,7 @@ var selected_seed = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_level()
+	load_level(1, Vector2(50,-50))
 
 func _process(delta):
 	#global inputs
@@ -19,17 +19,16 @@ func _process(delta):
 	#world stuff
 	update_targeted_seed()
 
-func load_level():
+func load_level(level_id, player_start_pos):
 	#Load the level
-	var world_select_id = 1
-	var new_world_scene = load("res://" + world_scenes_array[world_select_id] + ".tscn")
+	var new_world_scene = load("res://" + world_scenes_array[level_id] + ".tscn")
 	var new_world = new_world_scene.instance()
 	self.add_child(new_world)
 	
 	#Load the player
 	var new_player = player_scene.instance()
-	self.global_position.x = 50
-	self.global_position.y = -50
+	self.global_position.x = player_start_pos.x
+	self.global_position.y = player_start_pos.y
 	self.add_child(new_player)
 	#Connect the players
 	if new_player != null:
