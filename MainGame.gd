@@ -68,7 +68,7 @@ func load_level(level_id, player_start_pos):
 	#Connect seeds to have them push players
 	var seeds = get_tree().get_nodes_in_group("PlantSeed")
 	for a_seed in seeds:
-		a_seed.connect("has_pushed_player")
+		a_seed.connect("has_pushed_player",self, "_from_vine_push")
 		
 	is_loading = false
 

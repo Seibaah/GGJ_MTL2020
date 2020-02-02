@@ -25,6 +25,7 @@ func _physics_process(delta):
 			if a_body.is_in_group("player"):
 				var pushed_player = a_body
 				emit_signal("has_pushed_player", self, pushed_player)
+#				print ("touch")
 
 func shrug():
 	pass

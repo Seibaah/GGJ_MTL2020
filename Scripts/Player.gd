@@ -5,7 +5,7 @@ const UP = Vector2(0, -1)
 const GRAVITY = 20
 const MAX_CONTROL_SPEED = 200
 const MAX_BOUNCE_SPEED = 400
-const JUMP_FORCE = 800
+const JUMP_FORCE = 600
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
 
@@ -110,13 +110,21 @@ func bounce(push_direction, push_force):
 	var x = 16
 	var mass = 16
 	if push_direction.x != 0:
+		print ("x push")
 		if push_direction.x == 1:
 			motion.x += push_force
-		else: motion.x += push_force
+			print ("x push +")
+		else: 
+			motion.x += push_force
+			print ("x push - ")
 	elif push_direction.y != 0:
+		print ("y push")
 		if push_direction.y ==-1:
 			motion.y += push_force
-		else: motion.x += push_force
+			print ("y push +")
+		else: 
+			motion.x += push_force
+			print ("y push -")
 	
 		
 
