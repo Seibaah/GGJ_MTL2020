@@ -14,31 +14,31 @@
 [ext_resource path="res://MainMenu/Tree.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Tree/treeD4.png" type="Texture" id=15]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 88.8795
 height = 550.242
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 89.2405
 height = 569.012
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 50.1495
 height = 340.414
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 58.875
 height = 439.91
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 116.709
 height = 275.443
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 51.0334
 height = 247.3
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 33.7198
 height = 147.358
 
@@ -76,7 +76,7 @@ mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch/RigidBody2D"]
 position = Vector2( -9.71521, -11.8359 )
 rotation = -0.349066
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Branch2" type="Sprite" parent="Branches"]
 position = Vector2( 950, 170 )
@@ -90,7 +90,7 @@ mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch2/RigidBody2D"]
 position = Vector2( -28.0774, 7.89734 )
 rotation = -0.349066
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Branch3" type="Sprite" parent="Branches"]
 position = Vector2( 290, 200 )
@@ -103,7 +103,7 @@ mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch3/RigidBody2D"]
 rotation = -0.523599
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Branch4" type="Sprite" parent="Branches"]
 position = Vector2( 140, 500 )
@@ -117,7 +117,7 @@ mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch4/RigidBody2D"]
 position = Vector2( 13.1564, -0.300781 )
 rotation = 0.523599
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Branch5" type="Sprite" parent="Branches"]
 position = Vector2( 720, -2050 )
@@ -125,14 +125,12 @@ rotation = -2.96706
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Branches/Branch5" groups=[
-"lethal",
-]]
+[node name="RigidBody2D" type="RigidBody2D" parent="Branches/Branch5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch5/RigidBody2D"]
 position = Vector2( 5.43799, 111.596 )
 rotation = -0.523599
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Branch6" type="Sprite" parent="Branches"]
 position = Vector2( 1210, -1990 )
@@ -145,7 +143,7 @@ texture = ExtResource( 15 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branches/Branch6/RigidBody2D"]
 position = Vector2( 8.19348, 21.0042 )
 rotation = -0.523599
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="PlantSeed" parent="Branches" instance=ExtResource( 4 )]
 position = Vector2( 781, 341 )
@@ -217,7 +215,7 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trunk/Trunk/RigidBody2D2"]
 position = Vector2( 4.43225, 5.61832 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Trunk2" parent="Trunk" instance=ExtResource( 1 )]
