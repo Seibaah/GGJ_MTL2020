@@ -76,4 +76,11 @@ func update_targeted_seed():
 func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it
 	if selected_seed != null:
-		selected_seed.grow_plant(orientation)
+		if orientation == "up":
+			selected_seed.grow_plant(0)
+		if orientation == "right":
+			selected_seed.grow_plant(PI/2)
+		if orientation == "down":
+			selected_seed.grow_plant(PI)
+		if orientation == "left":
+			selected_seed.grow_plant(3*PI/2)
