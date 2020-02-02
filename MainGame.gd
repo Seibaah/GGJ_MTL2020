@@ -1,16 +1,16 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World", "World-2", "World-2"]
+var world_scenes_array = ["World", "World-2", "World", "World-2"]
 
 var current_player = null
-var current_world_id = 1
+var current_world_id = 0
 var current_world = null
 var selected_seed = null
 var is_loading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_level(1, Vector2(50,-50))
+	load_level(0, Vector2(50,-50))
 
 func _process(delta):
 	#global inputs
@@ -22,7 +22,9 @@ func _process(delta):
 
 func load_next_level():
 	current_world_id += 1
+	print("A")
 	if current_world_id < world_scenes_array.size():
+		print("B")
 		load_level(current_world_id, Vector2(0,0))
 
 func load_level(level_id, player_start_pos):
@@ -61,6 +63,8 @@ func load_level(level_id, player_start_pos):
 	var seeds = get_tree().get_nodes_in_group("PlantSeed")
 	for a_seed in seeds:
 		a_seed.connect("has_pushed_player")
+		
+	is_loading = false
 
 
 ### WORLD FUNCTIONS ###
@@ -98,12 +102,10 @@ func update_targeted_seed():
 
 
 func _on_ask_next_level():
-	#if !is_loading:
-	#	is_loading = true
-	
-	#current_world.queue_free()
-	#current_world = null
-	load_next_level()
+	print("CCC")
+	if !is_loading:
+		is_loading = true
+		load_next_level()
 
 func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it

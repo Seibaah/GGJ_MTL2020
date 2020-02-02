@@ -47,4 +47,4 @@ func _on_Newgame_pressed():
 	var fadein = get_parent().get_parent().get_parent().get_parent().get_child(1)
 	fadein.visible = true
 	$AnimationPlayer.play("fade_in")
-	get_tree().change_scene("res://World.tscn")
+	get_tree().change_scene("res://MainGame.tscn")
