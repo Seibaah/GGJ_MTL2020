@@ -28,4 +28,4 @@ position = Vector2( 921.884, 538.504 )
 position = Vector2( -230.426, -57.997 )
 
 [node name="PlantSeed" parent="." instance=ExtResource( 2 )]
-position = Vector2( 699.811, 212.399 )
+position = Vector2( 682.622, 561.076 )

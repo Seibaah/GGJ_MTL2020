@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=2]
-=======
-[gd_scene load_steps=4 format=2]
->>>>>>> Denis
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World_complete.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://PlantSeeds/PlantSeed.tscn" type="PackedScene" id=5]
 
 [node name="World-2" type="Node2D"]
 
@@ -22,7 +18,7 @@ __meta__ = {
 [node name="World_complete" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 986.08, 281.737 )
 
-[node name="Background" parent="." instance=ExtResource( 4 )]
+[node name="Spikes" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 718, 376 )
 
-[node name="PlantSeed" parent="." instance=ExtResource( 5 )]
-position = Vector2( 412.785, 252.415 )
+[node name="Background" parent="." instance=ExtResource( 4 )]

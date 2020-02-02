@@ -16,6 +16,7 @@ signal has_planted_left
 signal has_planted_right
 signal has_planted_up
 signal has_planted_down
+signal has_died
 
 #Animation variables
 #onready var anim_player = $AnimationPlayer
@@ -26,6 +27,16 @@ var facing_right = true
 func _physics_process(_delta):
 	motion.y += GRAVITY
 	var friction = false
+	
+	var lethal_check_bodies = $LethalArea2D.get_overlapping_bodies()
+	for a_body in lethal_check_bodies:
+		if a_body.is_in_group("lethal"):
+			die()
+	var lethal_check_areas = $LethalArea2D.get_overlapping_areas()
+	for a_body in lethal_check_areas:
+		if a_body.is_in_group("lethal"):
+			die()
+	
 	
 	if Input.is_action_pressed("move_right"):
 		motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
@@ -48,7 +59,7 @@ func _physics_process(_delta):
 			motion.x = lerp(motion.x, 0, 0.05)
 		
 	move_and_slide(Vector2(motion.x, motion.y), UP)
-			
+	
 	if is_on_ceiling():
 		motion.y = 0
 	if is_on_floor() and motion.y >= 5:
@@ -133,5 +144,6 @@ func play_anim(anim_name):
 #	add_child_below_node(get_tree().get_root().get_node("TileMap"), platform)
 	
 
-		
-		
+func die():
+	#$AnimationPlayer.play("die")
+	self.emit_signal("has_died")

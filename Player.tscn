@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/spiritSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -58,6 +58,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 49.92, 63.1398 )
+
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -87,3 +90,8 @@ texture = ExtResource( 1 )
 vframes = 2
 hframes = 3
 frame = 5
+
+[node name="LethalArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LethalArea2D"]
+shape = SubResource( 6 )

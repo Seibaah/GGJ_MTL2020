@@ -18,7 +18,8 @@ func _process(delta):
 		get_tree().reload_current_scene()
 	
 	#world stuff
-	update_targeted_seed()
+	if current_world != null:
+		update_targeted_seed()
 
 func load_next_level():
 	current_world_id += 1
@@ -30,10 +31,14 @@ func load_next_level():
 func load_level(level_id, player_start_pos):
 	if current_player != null:
 		current_player.queue_free()
+		current_player = null
 	if current_world != null:
 		current_world.queue_free()
+		current_world = null
+		selected_seed = null
 	
 	#Load the level
+	print("res://" + world_scenes_array[level_id] + ".tscn")
 	var new_world_scene = load("res://" + world_scenes_array[level_id] + ".tscn")
 	var new_world = new_world_scene.instance()
 	self.add_child(new_world)
@@ -56,6 +61,7 @@ func load_level(level_id, player_start_pos):
 	#Connect the players
 	if new_player != null:
 		new_player.connect("has_planted", self, "_on_player_planting")
+		new_player.connect("has_died", self, "_on_player_died")
 		current_player = new_player
 	
 	
@@ -70,7 +76,7 @@ func load_level(level_id, player_start_pos):
 ### WORLD FUNCTIONS ###
 
 func update_targeted_seed():
-	if is_loading:
+	if is_loading or current_world == null:
 		return
 	#target the closest seed to the player
 	if current_player == null:
@@ -93,7 +99,7 @@ func update_targeted_seed():
 	
 	if new_seed_target != selected_seed:
 		var previous_selected_seed = selected_seed
-		if selected_seed != null:
+		if selected_seed != null and previous_selected_seed != null:
 			previous_selected_seed.hide_as_target()
 		selected_seed = new_seed_target
 		selected_seed.display_as_target()
@@ -122,3 +128,6 @@ func _on_player_planting(player, orientation):
 		if selected_seed != null:
 			selected_seed.grow_plant(orientation)
 
+func _on_player_died():
+	#timer to be included here for death
+	load_level(current_world_id, Vector2(0,0))
