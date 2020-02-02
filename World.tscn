@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=3]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World_complete.tscn" type="PackedScene" id=5]
-[ext_resource path="res://growSpot.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 
@@ -13,9 +11,6 @@
 tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 15, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131087, 1, 0, 196608, 1, 0, 196623, 1, 0, 262144, 1, 0, 262149, 0, 0, 262159, 1, 0, 327680, 1, 0, 327684, 0, 0, 327685, 1, 0, 327686, 0, 0, 327695, 1, 0, 393216, 1, 0, 393219, 0, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 0, 0, 393231, 1, 0, 458752, 1, 0, 458754, 0, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 0, 0, 458767, 1, 0, 524288, 1, 0, 524289, 0, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 0, 0, 524303, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0 )
-
-[node name="Player" parent="TileMap" instance=ExtResource( 2 )]
-position = Vector2( 352.897, 198.676 )
 
 [node name="Label" type="Label" parent="TileMap"]
 margin_right = 40.0
@@ -27,12 +22,6 @@ __meta__ = {
 
 [node name="World_complete" parent="." instance=ExtResource( 5 )]
 position = Vector2( 921.884, 538.504 )
-
-[node name="growSpot2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 506.127, 262.352 )
-
-[node name="growSpot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 787.27, 472.178 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 position = Vector2( -230.426, -57.997 )
