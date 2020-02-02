@@ -1,7 +1,7 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
 
-var world_scenes_array = [ "World-4","World-3", "World-2" ]
+var world_scenes_array = [ "World-3","World-2", "World-3" ]
 
 
 var current_player = null
