@@ -19,6 +19,11 @@ config/name="Sauver la planète"
 run/main_scene="res://Main_menu.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1600
+window/size/height=900
+
 [input]
 
 ui_cancel={

@@ -60,8 +60,6 @@ texture = ExtResource( 5 )
 margin_top = 133.0
 margin_right = 537.0
 margin_bottom = 373.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 script = ExtResource( 6 )
@@ -94,6 +92,7 @@ margin_top = 377.0
 margin_right = 537.0
 margin_bottom = 377.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -112,7 +111,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/CenterContainer"]
-position = Vector2( 200, 250 )
+position = Vector2( 653.402, 453.568 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 

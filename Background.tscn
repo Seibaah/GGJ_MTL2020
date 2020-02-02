@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/Background_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Backgrounds/Background_black.PNG" type="Texture" id=2]
 
 [node name="Background" type="Node2D"]
 
@@ -8,8 +9,15 @@
 follow_viewport_enable = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 820.209, 491.607 )
-scale = Vector2( 1.63765, 2.23614 )
+position = Vector2( 820.209, 372.104 )
+scale = Vector2( 1.63765, 2.5349 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1920, 800 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 818.453, -1522.58 )
+scale = Vector2( 15.7079, 8.83321 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 200 )

@@ -1,6 +1,6 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World", "World-2", "World", "World-2"]
+var world_scenes_array = ["World-1", "World-2", "World-3", "World-4"]
 
 var current_player = null
 var current_world_id = 0
@@ -102,7 +102,8 @@ func update_targeted_seed():
 		if selected_seed != null and previous_selected_seed != null:
 			previous_selected_seed.hide_as_target()
 		selected_seed = new_seed_target
-		selected_seed.display_as_target()
+		if selected_seed != null:
+			selected_seed.display_as_target()
 #=======
 #
 #

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_texture = SubResource( 2 )
+
+[node name="Orb" type="Node2D"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 512 )
+hdr = false
+disable_3d = true
+
+[node name="ColorRect" type="ColorRect" parent="Viewport"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Viewport"]
+material_override = SubResource( 3 )
