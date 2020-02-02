@@ -109,8 +109,6 @@ func _on_ask_next_level():
 
 func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it
-	if selected_seed != null:
-		selected_seed.grow_plant(orientation)
 
 		if orientation == "up":
 			selected_seed.grow_plant(0)
@@ -120,4 +118,7 @@ func _on_player_planting(player, orientation):
 			selected_seed.grow_plant(PI)
 		if orientation == "left":
 			selected_seed.grow_plant(3*PI/2)
+		
+		if selected_seed != null:
+			selected_seed.grow_plant(orientation)
 

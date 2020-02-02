@@ -38,20 +38,20 @@ func shrug():
 	elif current_plant != null:
 		current_plant.shrug()
 
-func grow_plant(orientation):
+func grow_plant(ori):
 	if is_planted or is_withered:
 		pass
 	else:
 #		if available_plants.find(plant_id) == -1:
 #			pass
 #		else:
-		force_grow_plant(orientation)
+		force_grow_plant(ori)
 
-func force_grow_plant(orientation):
+func force_grow_plant(ori):
 
 	$SeedSprite.hide()
 	var target_plant = VINE_RESOURCE.instance()
-	target_plant.rotate(orientation)
+	target_plant.rotate(ori)
 	self.add_child(target_plant)
 #	var plants =  $Plants.get_children()
 #	if is_planted:
