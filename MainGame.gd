@@ -1,6 +1,6 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World-1", "World-2", "World-3", "World-4"]
+var world_scenes_array = [ "World-4","World-3", "World-2" ]
 
 var current_player = null
 var current_world_id = 0
@@ -10,7 +10,7 @@ var is_loading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_level(0, Vector2(50,-50))
+	load_level(0, Vector2(-1,-1))
 
 func _process(delta):
 	#global inputs
@@ -26,7 +26,7 @@ func load_next_level():
 	print("A")
 	if current_world_id < world_scenes_array.size():
 		print("B")
-		load_level(current_world_id, Vector2(0,0))
+		load_level(current_world_id, Vector2(-1,-1))
 
 func load_level(level_id, player_start_pos):
 	if current_player != null:
@@ -118,7 +118,6 @@ func update_targeted_seed():
 
 ### SIGNALS ###
 func _from_vine_push(vine, player):
-	print("_from_vine_push")
 	player.bounce(Vector2(0,-1).rotated(vine.rotation))
 	
 
