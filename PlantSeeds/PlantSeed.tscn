@@ -37,7 +37,9 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[node name="PlantSeed" type="KinematicBody2D"]
+[node name="PlantSeed" type="KinematicBody2D" groups=[
+"seed",
+]]
 script = ExtResource( 1 )
 
 [node name="SeedSprite" type="Sprite" parent="."]

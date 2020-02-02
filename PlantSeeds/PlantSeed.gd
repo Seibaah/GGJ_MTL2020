@@ -13,7 +13,7 @@ signal has_withered
 func _ready():
 	$AnimationPlayer.play("default")
 
-func _process(delta):
+func _process(_delta):
 	### SHRUG IF THE PLAYER IS CLOSE
 	var bodies_close = $DetectionArea2D.get_overlapping_bodies()
 	for a_body in bodies_close:
@@ -70,6 +70,7 @@ func wither():
 			a_plant.wither()
 		is_planted = false
 		is_withered = true
+		emit_signal("has_withered", self)
 
 
 func wither_and_compost():
@@ -77,3 +78,5 @@ func wither_and_compost():
 	$SeedSprite.show()
 	is_planted = false
 	is_withered = false
+	emit_signal("has_withered", self)
+	
