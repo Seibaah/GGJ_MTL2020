@@ -23,8 +23,7 @@ func _physics_process(delta):
 		var bodies = $Area2D.get_overlapping_bodies()
 		for a_body in bodies:
 			if a_body.is_in_group("player"):
-				var pushed_player = a_body
-				emit_signal("has_pushed_player", self, pushed_player)
+				emit_signal("has_pushed_player", self, a_body)
 #				print ("touch")
 
 func shrug():
