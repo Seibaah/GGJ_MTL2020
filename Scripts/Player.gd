@@ -12,6 +12,10 @@ const MAX_JUMP_COUNT = 2
 var motion = Vector2()
 
 signal has_planted
+signal has_planted_left
+signal has_planted_right
+signal has_planted_up
+signal has_planted_down
 
 #Animation variables
 #onready var anim_player = $AnimationPlayer
@@ -73,7 +77,15 @@ func _physics_process(_delta):
 	#plant_seed
 	if Input.is_action_just_pressed("plant_seed"):
 		emit_signal("has_planted", self)
-		
+	
+	if Input.is_action_just_pressed("plant_left_p0"):
+		emit_signal("has_planted_left", self, "left")
+	if Input.is_action_just_pressed("plant_right_p0"):
+		emit_signal("has_planted_right", self, "right")
+	if Input.is_action_just_pressed("plant_up_p0"):
+		emit_signal("has_planted_up", self, "up")
+	if Input.is_action_just_pressed("plant_left_p0"):
+		emit_signal("has_planted_down", self, "down")
 
 #function to flip sprite
 func flip():
