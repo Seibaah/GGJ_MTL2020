@@ -79,13 +79,13 @@ func _physics_process(_delta):
 		emit_signal("has_planted", self)
 	
 	if Input.is_action_just_pressed("plant_left_p0"):
-		emit_signal("has_planted_left", self, "left")
+		emit_signal("has_planted", self, "left")
 	if Input.is_action_just_pressed("plant_right_p0"):
-		emit_signal("has_planted_right", self, "right")
+		emit_signal("has_planted", self, "right")
 	if Input.is_action_just_pressed("plant_up_p0"):
-		emit_signal("has_planted_up", self, "up")
+		emit_signal("has_planted", self, "up")
 	if Input.is_action_just_pressed("plant_left_p0"):
-		emit_signal("has_planted_down", self, "down")
+		emit_signal("has_planted", self, "down")
 	
 #function that applies a bounciness to a player's velocity vector
 #push_direction is Vector2, push_force is Int

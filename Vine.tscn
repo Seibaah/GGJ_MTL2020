@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Sprites/vineSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Vine.gd" type="Script" id=8]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "grow"
 tracks/0/type = "value"
 tracks/0/path = NodePath("vinesprite:frame")
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 4, 5, 6, 3 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 14.6489
 
 [node name="Vine" type="KinematicBody2D"]
@@ -27,7 +27,7 @@ scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/grow = SubResource( 2 )
+anims/grow = SubResource( 1 )
 
 [node name="vinesprite" type="Sprite" parent="."]
 position = Vector2( 11.3503, -386.769 )
@@ -38,4 +38,4 @@ frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -6.13358, -27.0131 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )

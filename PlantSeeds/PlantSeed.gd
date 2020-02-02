@@ -36,30 +36,29 @@ func shrug():
 	elif current_plant != null:
 		current_plant.shrug()
 
-func grow_plant(plant_id, player):
+func grow_plant(orientation):
 	if is_planted or is_withered:
 		pass
 	else:
-		if available_plants.find(plant_id) == -1:
-			pass
-		else:
-			force_grow_plant(plant_id, player)
+#		if available_plants.find(plant_id) == -1:
+#			pass
+#		else:
+		force_grow_plant(orientation)
 
-func force_grow_plant(plant_id, player):
-	if available_plants.find(plant_id) != -1:
-		$SeedSprite.hide()
-		var target_plant = self.get_node("Plants/Plant" + str(plant_id))
-		
-		var plants =  $Plants.get_children()
-		if is_planted:
-			for a_plant in plants:
-				if a_plant != target_plant:
-					a_plant.wither()
-		target_plant.grow()
-		current_plant = target_plant
-		is_planted = true
-		
-		emit_signal("has_grown", self)
+func force_grow_plant(orientation):
+
+	$SeedSprite.hide()
+	var target_plant = self.get_node("Plants/Plant0")
+#	var plants =  $Plants.get_children()
+#	if is_planted:
+#		for a_plant in plants:
+#			if a_plant != target_plant:
+#				a_plant.wither()
+	target_plant.grow()
+	current_plant = target_plant
+	is_planted = true
+	
+	emit_signal("has_grown", self)
 
 
 func wither():

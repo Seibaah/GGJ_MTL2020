@@ -11,7 +11,7 @@ const vineScene = preload("res://Vine.tscn")
 func _ready():
 	$AnimationPlayer.play("effervescence")
 
-func _on_growth_request(vine_rotation):#orientation is an int 
+func grow_plant(vine_rotation):#orientation is an int 
 	var vineInstance = vineScene.instance()
 	vineInstance.transform(rotate(vine_rotation))
 	self.add_child(vineInstance)

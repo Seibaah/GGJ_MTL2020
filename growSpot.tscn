@@ -19,7 +19,9 @@ tracks/0/keys = {
 "values": [ 0, 0, 1, 1, 2, 2, 0, 0, 1, 1 ]
 }
 
-[node name="Growspot" type="Node2D"]
+[node name="Growspot" type="Node2D" groups=[
+"seed",
+]]
 position = Vector2( 2.20901, 2.15988 )
 script = ExtResource( 2 )
 

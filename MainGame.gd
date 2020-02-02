@@ -73,7 +73,7 @@ func update_targeted_seed():
 
 ### SIGNALS ###
 
-func _on_player_planting(a_player):
+func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it
 	if selected_seed != null:
-		selected_seed.grow_plant(0, current_player)
+		selected_seed.grow_plant(orientation)
