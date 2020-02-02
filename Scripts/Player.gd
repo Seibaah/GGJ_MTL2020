@@ -15,8 +15,8 @@ signal has_planted
 
 #Animation variables
 #onready var anim_player = $AnimationPlayer
-onready var anim_player = $AnimatedSprite
-onready var sprite = $AnimatedSprite
+onready var anim_player = $AnimationPlayer
+onready var sprite = $Spirit
 var facing_right = true
 
 func _physics_process(_delta):
@@ -80,7 +80,7 @@ func flip():
 
 #function to play sprite animation
 func play_anim(anim_name):
-	if anim_player.is_playing() and anim_player.animation == anim_name:
+	if anim_player.is_playing() and anim_player.current_animation == anim_name:
 		return
 	anim_player.play(anim_name)
 	
