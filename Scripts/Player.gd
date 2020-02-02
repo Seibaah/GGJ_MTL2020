@@ -8,10 +8,12 @@ const MAX_BOUNCE_SPEED = 400
 const JUMP_FORCE = 600
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
+const DASH_SPEED = 750
 const push_force_x = 600
 const push_force_y = 350
 
 var motion = Vector2()
+var is_dashing = false
 
 signal has_planted
 signal has_planted_left
@@ -38,18 +40,27 @@ func _physics_process(_delta):
 	for a_body in lethal_check_areas:
 		if a_body.is_in_group("lethal"):
 			die()
+
+	play_anim("walk")
+	if !is_dashing:
+		if Input.is_action_pressed("move_right"):
+			motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
+		elif Input.is_action_pressed("move_left"):
+			motion.x = max (motion.x - ACCELERATION, -MAX_CONTROL_SPEED)
+		else: 
+			friction = true
+
 	
+	if !is_on_floor():
+		if Input.is_action_just_pressed("dash_right"):
+			is_dashing = true
+			$DashTimer.start()
+			motion.x = DASH_SPEED
+		elif Input.is_action_just_pressed("dash_left"):
+			is_dashing = true
+			$DashTimer.start()
+			motion.x = -DASH_SPEED
 	
-	if Input.is_action_pressed("move_right"):
-		motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
-		play_anim("walk")
-	elif Input.is_action_pressed("move_left"):
-		motion.x = max (motion.x - ACCELERATION, -MAX_CONTROL_SPEED)
-		play_anim("walk")
-	else: 
-		friction = true
-		play_anim("walk")
-		
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMP_FORCE
@@ -153,3 +164,7 @@ func play_anim(anim_name):
 func die():
 	#$AnimationPlayer.play("die")
 	self.emit_signal("has_died")
+
+
+func _on_DashTimer_timeout():
+	is_dashing = false
