@@ -10,7 +10,7 @@
 [sub_resource type="DynamicFont" id=1]
 size = 32
 outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -32,6 +32,20 @@ position = Vector2( 850, 540 )
 [node name="PlantSeed" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( -200, 500 )
 
+[node name="ColorRect" type="ColorRect" parent="TileMap"]
+margin_left = -176.0
+margin_top = -77.0
+margin_right = 135.0
+margin_bottom = 135.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="TileMap"]
+position = Vector2( -20.4768, 26.7336 )
+texture = ExtResource( 7 )
+energy = 1.54
+
 [node name="Background" parent="." instance=ExtResource( 3 )]
 position = Vector2( -5.83173, 24.4933 )
 
@@ -52,8 +66,8 @@ margin_top = -65.7828
 margin_right = 337.838
 margin_bottom = 127.217
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0.368627, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0.368627, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0.368627, 1, 1 )
 text = "Go near the seed
 jump and press one
