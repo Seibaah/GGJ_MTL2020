@@ -5,7 +5,7 @@ const UP = Vector2(0, -1)
 const GRAVITY = 20
 const MAX_CONTROL_SPEED = 200
 const MAX_BOUNCE_SPEED = 400
-const JUMP_FORCE = 800
+const JUMP_FORCE = 600
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
 
