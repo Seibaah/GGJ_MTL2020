@@ -51,13 +51,14 @@ func force_grow_plant(orientation):
 
 	$SeedSprite.hide()
 	var target_plant = VINE_RESOURCE.instance()
+	target_plant.rotate(orientation)
 	self.add_child(target_plant)
 #	var plants =  $Plants.get_children()
 #	if is_planted:
 #		for a_plant in plants:
 #			if a_plant != target_plant:
 #				a_plant.wither()
-	
+
 	current_plant = target_plant
 	is_planted = true
 	

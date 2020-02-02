@@ -96,10 +96,6 @@ func update_targeted_seed():
 
 ### SIGNALS ###
 
-func _on_player_planting(player, orientation):
-	#find the closest node to the player, and seed it
-	if selected_seed != null:
-		selected_seed.grow_plant(orientation)
 
 func _on_ask_next_level():
 	#if !is_loading:
@@ -108,3 +104,18 @@ func _on_ask_next_level():
 	#current_world.queue_free()
 	#current_world = null
 	load_next_level()
+
+func _on_player_planting(player, orientation):
+	#find the closest node to the player, and seed it
+	if selected_seed != null:
+		selected_seed.grow_plant(orientation)
+
+		if orientation == "up":
+			selected_seed.grow_plant(0)
+		if orientation == "right":
+			selected_seed.grow_plant(PI/2)
+		if orientation == "down":
+			selected_seed.grow_plant(PI)
+		if orientation == "left":
+			selected_seed.grow_plant(3*PI/2)
+
