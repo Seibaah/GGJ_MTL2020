@@ -3,11 +3,11 @@ extends KinematicBody2D
 #Physics' variables
 const UP = Vector2(0, -1)
 const GRAVITY = 20
-const MAX_SPEED = 300
+const MAX_CONTROL_SPEED = 200
+const MAX_BOUNCE_SPEED = 400
 const JUMP_FORCE = 800
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
-const MAX_JUMP_COUNT = 2
 
 var motion = Vector2()
 
@@ -24,10 +24,10 @@ func _physics_process(_delta):
 	var friction = false
 	
 	if Input.is_action_pressed("move_right"):
-		motion.x = min (motion.x + ACCELERATION, MAX_SPEED)
+		motion.x = min (motion.x + ACCELERATION, MAX_CONTROL_SPEED)
 		play_anim("walk")
 	elif Input.is_action_pressed("move_left"):
-		motion.x = max (motion.x - ACCELERATION, -MAX_SPEED)
+		motion.x = max (motion.x - ACCELERATION, -MAX_CONTROL_SPEED)
 		play_anim("walk")
 	else: 
 		friction = true
@@ -73,6 +73,26 @@ func _physics_process(_delta):
 	#plant_seed
 	if Input.is_action_just_pressed("plant_seed"):
 		emit_signal("has_planted", self)
+		
+#function that applies a bounciness to a player's velocity vector
+#push_direction is Vector2, push_force is Int
+#F = nkx : n=contact normal, k=spring coeff, x=compression distance
+#F = ma :  m=mass, a=acceleration
+#
+#NOT FINAL
+#
+func bounce(push_direction, push_force):
+	var x = 16
+	var mass = 16
+	if push_direction.x != 0:
+		if push_direction.x == 1:
+			motion.x += push_force
+		else: motion.x += push_force
+	elif push_direction.y != 0:
+		if push_direction.y ==-1:
+			motion.y += push_force
+		else: motion.x += push_force
+	
 		
 
 #function to flip sprite
