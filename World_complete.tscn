@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[node name="World_complete" type="Area2D"]
+[node name="World_complete" type="Area2D" groups=[
+"WorldCompleter",
+]]
 script = ExtResource( 2 )
 
 [node name="icon" type="Sprite" parent="."]
