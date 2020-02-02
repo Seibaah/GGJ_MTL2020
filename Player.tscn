@@ -1,16 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Assets/Sprites/spiritSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sprites/spirit.005_reverse.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/spirit.003.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/spirit.004.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/spirit.003_reverse.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/spirit.004_reverse.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/spirit.002_reverse.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/spirit.005.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/spirit.001.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/spirit.001_reverse.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/spirit.002.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.9746, 55.8843 )
@@ -21,27 +12,51 @@ radius = 59.5435
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spirit:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spirit:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "walk"
-length = 0.3
+length = 0.5
 loop = true
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk_reverse",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spirit:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 187.228, 134.867 )
@@ -60,12 +75,13 @@ anims/idle = SubResource( 3 )
 anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -5.18652, 14.0048 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 6 )
-animation = "walk_reverse"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
+
+[node name="Spirit" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 3
+frame = 5
