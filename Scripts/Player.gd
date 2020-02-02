@@ -8,6 +8,8 @@ const MAX_BOUNCE_SPEED = 400
 const JUMP_FORCE = 600
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
+const push_force_x = 600
+const push_force_y = 350
 
 var motion = Vector2()
 
@@ -106,25 +108,21 @@ func _physics_process(_delta):
 #
 #NOT FINAL
 #
-func bounce(push_direction, push_force):
+func bounce(push_direction:Vector2):
 	var x = 16
 	var mass = 16
-	if push_direction.x != 0:
-		print ("x push")
+	push_direction = push_direction.normalized()
+	if abs(push_direction.x) > 0.3:
 		if push_direction.x == 1:
-			motion.x += push_force
-			print ("x push +")
+			motion.x += push_force_x
 		else: 
-			motion.x += push_force
-			print ("x push - ")
-	elif push_direction.y != 0:
-		print ("y push")
+			motion.x -= push_force_x
+	elif abs(push_direction.y) > 0.3:
 		if push_direction.y ==-1:
-			motion.y += push_force
-			print ("y push +")
+			var prev_mot = motion.y
+			motion.y = -1000
 		else: 
-			motion.x += push_force
-			print ("y push -")
+			motion.y += push_force_y
 	
 		
 

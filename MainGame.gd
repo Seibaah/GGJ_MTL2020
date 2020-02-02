@@ -1,6 +1,6 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World", "World-2", "World", "World-2"]
+var world_scenes_array = ["World-2", "World-2", "World", "World-2"]
 
 var current_player = null
 var current_world_id = 0
@@ -66,9 +66,13 @@ func load_level(level_id, player_start_pos):
 	
 	
 	#Connect seeds to have them push players
-	var seeds = get_tree().get_nodes_in_group("PlantSeed")
+	var seeds = get_tree().get_nodes_in_group("seed")
+	if seeds == null:
+		print("no seeds")
 	for a_seed in seeds:
+		print("connecting to seed")
 		a_seed.connect("has_pushed_player",self, "_from_vine_push")
+		print("connecting to seed2")
 		
 	is_loading = false
 
@@ -102,7 +106,8 @@ func update_targeted_seed():
 		if selected_seed != null and previous_selected_seed != null:
 			previous_selected_seed.hide_as_target()
 		selected_seed = new_seed_target
-		selected_seed.display_as_target()
+		if selected_seed != null:
+			selected_seed.display_as_target()
 #=======
 #
 #
@@ -113,7 +118,10 @@ func update_targeted_seed():
 #>>>>>>> b1fc21de207122d353fc0a65a97f2dcf2c15a6a1
 
 ### SIGNALS ###
-
+func _from_vine_push(vine, player):
+	print("_from_vine_push")
+	player.bounce(Vector2(0,-1).rotated(vine.rotation))
+	
 
 func _on_ask_next_level():
 	print("CCC")

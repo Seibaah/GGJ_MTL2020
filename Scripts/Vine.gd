@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var is_planted:bool = false
 var is_withered:bool = false
+var has_pushed_timer:bool = false
 
 var is_growing:bool = false
 export var plant_id:int = 0
@@ -10,7 +11,7 @@ export var impact_force = 50
 
 const HAS_GROWN = "has_grown"
 const HAS_WITHERED = "has_withered"
-const HAS_PUSHED_PLAYER = "has_pushed_player"
+#const HAS_PUSHED_PLAYER = "has_pushed_player"
 signal has_grown
 signal has_withered
 signal has_pushed_player
@@ -19,12 +20,15 @@ func _ready():
 	grow()
 
 func _physics_process(delta):
-	if is_growing:
-		var bodies = $Area2D.get_overlapping_bodies()
-		for a_body in bodies:
-			if a_body.is_in_group("player"):
-				emit_signal("has_pushed_player", self, a_body)
-#				print ("touch")
+	if !has_pushed_timer:
+		if is_growing:
+			var bodies = $Area2D.get_overlapping_bodies()
+			for a_body in bodies:
+				if a_body.is_in_group("player"):
+					has_pushed_timer = true
+					$Timer.start()
+					get_parent().emit_signal("has_pushed_player", self, a_body)
+	#				print ("touch")
 
 func shrug():
 	pass
@@ -40,3 +44,7 @@ func grow():
 
 func stop_growing():
 	is_growing = true
+
+
+func _on_Timer_timeout():
+	has_pushed_timer = false
