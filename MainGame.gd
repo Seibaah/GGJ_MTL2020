@@ -90,13 +90,12 @@ func update_targeted_seed():
 				if a_distance < closest_distance:
 					closest_distance = a_distance
 					new_seed_target = a_seed
-	
-	if new_seed_target != selected_seed:
-		var previous_selected_seed = selected_seed
-		if selected_seed != null:
-			previous_selected_seed.hide_as_target()
-		selected_seed = new_seed_target
-		selected_seed.display_as_target()
+					
+
+	if selected_seed != null:
+		selected_seed.hide_as_target()
+	selected_seed = new_seed_target
+	selected_seed.display_as_target()
 
 ### SIGNALS ###
 
@@ -120,5 +119,4 @@ func _on_player_planting(player, orientation):
 			selected_seed.grow_plant(3*PI/2)
 		
 		if selected_seed != null:
-			selected_seed.grow_plant(orientation)
-
+			print("no selected seed")

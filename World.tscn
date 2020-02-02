@@ -25,7 +25,10 @@ __meta__ = {
 position = Vector2( 921.884, 538.504 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
-position = Vector2( -230.426, -57.997 )
+position = Vector2( -231.426, -56.997 )
 
 [node name="PlantSeed" parent="." instance=ExtResource( 2 )]
-position = Vector2( 699.811, 212.399 )
+position = Vector2( 711.714, 577.395 )
+
+[node name="PlantSeed2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 550.46, 425.055 )
