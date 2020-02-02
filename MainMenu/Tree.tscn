@@ -21,7 +21,7 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "final",
-"speed": 2.0
+"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -29,15 +29,14 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "final",
-"speed": 5.0
+"speed": 1.0
 } ]
 
 [node name="Tree" type="Node2D"]
 position = Vector2( 594.225, 295.885 )
 script = ExtResource( 11 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-mode = 1
+[node name="RigidBody2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource( 1 )
@@ -48,60 +47,27 @@ frames = SubResource( 2 )
 animation = "final"
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( -257.042, 138.041 )
+position = Vector2( -279.203, 187.903 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "final"
+frame = 2
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( 191.988, 144.388 )
+position = Vector2( 267.961, 187.245 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "final"
-
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( -314.162, -12.6934 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 3 )
-animation = "final"
-
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( 250.695, -9.52002 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 3 )
-animation = "final"
-
-[node name="AnimatedSprite9" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( -258.629, -26.9734 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 3 )
-animation = "final"
-flip_v = true
-
-[node name="AnimatedSprite8" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( 190.401, -20.6268 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 3 )
-animation = "final"
-flip_v = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( -315.749, -177.708 )
+position = Vector2( -343.021, -255.629 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "final"
 flip_v = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="RigidBody2D"]
-visible = false
-position = Vector2( 249.109, -174.535 )
+position = Vector2( 307.55, -262.196 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
 animation = "final"

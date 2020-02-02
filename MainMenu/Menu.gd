@@ -47,3 +47,40 @@ func _on_New_Game_pressed():
 	#fadein.visible = true
 	#$AnimationPlayer.play("fade_in")
 	get_tree().change_scene("res://MainGame.tscn")
+
+func _on_Quit_Credits_pressed():
+	print("test")
+	$Credits_panel.hide()
+	$NewGame.visible = true
+	$Controls.visible = true
+	$Credits.visible = true
+	$Quit.visible = true
+
+func _on_Quit_Controls_pressed():
+	print("test")
+	$Controls_panel.hide()
+	$NewGame.visible = true
+	$Controls.visible = true
+	$Credits.visible = true
+	$Quit.visible = true
+
+func _on_Quit_pressed():
+	get_tree().quit()
+
+
+func _on_Credits_pressed():
+	$NewGame.visible = false
+	$Controls.visible = false
+	$Credits.visible = false
+	$Quit.visible = false
+	
+	$Credits_panel.show()
+
+
+func _on_Controls_pressed():
+	$NewGame.visible = false
+	$Controls.visible = false
+	$Credits.visible = false
+	$Quit.visible = false
+	
+	$Controls_panel.show()

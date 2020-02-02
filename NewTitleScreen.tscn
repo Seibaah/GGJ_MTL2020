@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://NewTitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Artwork/tittlescreen.png" type="Texture" id=2]
+[ext_resource path="res://MainMenu/Atlane OTF.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 2
+outline_color = Color( 0.027451, 0.498039, 0.380392, 1 )
+font_data = ExtResource( 3 )
+
+[node name="NewTitleScreen" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1038.0
+margin_bottom = 608.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 539.992
+margin_top = 169.444
+margin_right = 628.992
+margin_bottom = 260.444
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnStart" type="Button" parent="VBoxContainer"]
+margin_right = 89.0
+margin_bottom = 27.0
+size_flags_vertical = 3
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnCredits" type="Button" parent="VBoxContainer"]
+margin_top = 31.0
+margin_right = 89.0
+margin_bottom = 58.0
+size_flags_vertical = 3
+text = "Credits"
+
+[node name="BtnExit" type="Button" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 89.0
+margin_bottom = 91.0
+size_flags_vertical = 3
+text = "Exit"
+
+[node name="Title" type="Label" parent="."]
+margin_left = 470.523
+margin_top = 84.9937
+margin_right = 609.523
+margin_bottom = 127.994
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.00392157, 0.101961, 0.0627451, 1 )
+custom_colors/font_outline_modulate = Color( 0.00392157, 0.101961, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.00392157, 0.101961, 0.0627451, 1 )
+text = "Abitibi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Panel" parent="."]
+visible = false
+margin_left = 431.102
+margin_top = 144.237
+margin_right = 739.102
+margin_bottom = 282.237
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Chris, Sleepless Artist
+Alexandre, GitMaster
+Denis, Programmer in the master
+Jules, 3D Artist & Sequel' programmer
+Andre, Poor advices"
+align = 1
+
+[node name="BtnCloseCredits" type="Button" parent="Credits"]
+margin_left = 120.0
+margin_top = 114.0
+margin_right = 193.0
+margin_bottom = 134.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/BtnStart" to="." method="_on_BtnStart_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnCredits" to="." method="_on_BtnCredits_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnExit" to="." method="_on_BtnExit_pressed"]
+[connection signal="pressed" from="Credits/BtnCloseCredits" to="." method="_on_BtnCloseCredits_pressed"]
