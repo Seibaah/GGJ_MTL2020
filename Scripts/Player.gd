@@ -8,7 +8,7 @@ const MAX_BOUNCE_SPEED = 400
 const JUMP_FORCE = 600
 const ACCELERATION = 50
 const MAX_FALL_SPEED = 1000
-const DASH_SPEED = 750
+const DASH_SPEED = 500
 const push_force_x = 600
 const push_force_y = 350
 
@@ -51,7 +51,7 @@ func _physics_process(_delta):
 			friction = true
 
 	
-	if !is_on_floor():
+	if !is_on_floor() and !is_dashing:
 		if Input.is_action_just_pressed("dash_right"):
 			is_dashing = true
 			$DashTimer.start()
@@ -96,21 +96,21 @@ func _physics_process(_delta):
 		flip()
 	
 	#select_seed
-	if Input.is_action_just_pressed("select_next_seed"):
-		pass
+#	if Input.is_action_just_pressed("select_next_seed"):
+#		pass
 	#plant_seed
-	if !is_on_floor():
-		if Input.is_action_just_pressed("plant_seed"):
-			emit_signal("has_planted", self)
+
+#		if Input.is_action_just_pressed("plant_seed"):
+#			emit_signal("has_planted", self)
 		
-		if Input.is_action_just_pressed("plant_left_p0"):
-			emit_signal("has_planted", self, "left")
-		if Input.is_action_just_pressed("plant_right_p0"):
-			emit_signal("has_planted", self, "right")
-		if Input.is_action_just_pressed("plant_up_p0"):
-			emit_signal("has_planted", self, "up")
-		if Input.is_action_just_pressed("plant_down_p0"):
-			emit_signal("has_planted", self, "down")
+	if Input.is_action_just_pressed("plant_left_p0"):
+		emit_signal("has_planted", self, "left")
+	if Input.is_action_just_pressed("plant_right_p0"):
+		emit_signal("has_planted", self, "right")
+	if Input.is_action_just_pressed("plant_up_p0"):
+		emit_signal("has_planted", self, "up")
+	if Input.is_action_just_pressed("plant_down_p0"):
+		emit_signal("has_planted", self, "down")
 	
 #function that applies a bounciness to a player's velocity vector
 #push_direction is Vector2, push_force is Int
