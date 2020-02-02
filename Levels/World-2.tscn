@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World_complete.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles.tres" type="TileSet" id=3]
+[ext_resource path="res://PlantSeeds/PlantSeed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=5]
+
+[node name="World-2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -65541, 1, 0, -65540, 1, 0, -65539, 1, 0, -65538, 1, 0, -65537, 1, 0, -131072, 1, 0, -5, 1, 0, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196624, 0, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262160, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 393211, 1, 0, 393212, 1, 0, 393213, 1, 0, 393214, 1, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 1, 0, 327700, 1, 0, 327701, 1, 0, 327704, 1, 0, 327705, 1, 0, 458747, 1, 0, 458748, 1, 0, 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393236, 1, 0, 393237, 1, 0, 393240, 1, 0, 393241, 1, 0, 524283, 1, 0, 524284, 1, 0, 524285, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458773, 1, 0, 458776, 1, 0, 458777, 1, 0, 589819, 1, 0, 589820, 1, 0, 589821, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524309, 1, 0, 524312, 1, 0, 524313, 1, 0, 655355, 1, 0, 655356, 1, 0, 655357, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589848, 1, 0, 589849, 1, 0, 720891, 1, 0, 720892, 1, 0, 720893, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655384, 1, 0, 655385, 1, 0, 786427, 1, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720920, 1, 0, 720921, 1, 0, 851963, 1, 0, 851964, 1, 0, 851965, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786456, 1, 0, 786457, 1, 0, 917499, 1, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0 )
+
+[node name="World_complete" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 1474.75, 440.274 )
+
+[node name="Background" parent="TileMap/World_complete" instance=ExtResource( 1 )]
+position = Vector2( -1.54761, 1.54755 )
+
+[node name="PlantSeed" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 405.337, 396.009 )
+
+[node name="PlantSeed2" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 669.3, 394.781 )
+
+[node name="Darkness" type="Node2D" parent="."]
+position = Vector2( 5.27429, 70.3234 )
+
+[node name="Spikes" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 341.181, 422.6 )
+
+[node name="Spikes2" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 398.045, 422.6 )
+
+[node name="Spikes3" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 453.185, 428.808 )
+
+[node name="Spikes4" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 506.371, 426.592 )
+
+[node name="Spikes5" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 559.556, 431.024 )
+
+[node name="Spikes6" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 622.714, 425.484 )
+
+[node name="Spikes7" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 680.332, 435.457 )
+
+[node name="Spikes8" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 731.301, 427.7 )
+
+[node name="Spikes9" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 777.839, 427.7 )
+
+[node name="Spikes10" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 807.755, 428.808 )
+
+[node name="Spikes11" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 1234.23, 750.605 )
+
+[node name="Spikes12" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 1176.08, 697.618 )
+
+[node name="Spikes13" parent="Darkness" instance=ExtResource( 5 )]
+position = Vector2( 1106.29, 647.216 )
+
+[node name="StartPosition2D" type="Position2D" parent="."]
+position = Vector2( 116.589, 38.8629 )
+
+[node name="PlantSeed" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1050.1, 609.272 )
+
+[node name="PlantSeed2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1504.3, 741.811 )
+
+[node name="Tuto" type="Node2D" parent="."]
+
+[node name="001" type="Node2D" parent="Tuto"]
+
+[node name="ColorRect" type="ColorRect" parent="Tuto/001"]
+margin_left = 267.0
+margin_top = 10.0
+margin_right = 481.0
+margin_bottom = 103.0
+color = Color( 0.145098, 0.168627, 0.188235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tuto/001"]
+margin_left = 279.0
+margin_top = 21.0
+margin_right = 474.0
+margin_bottom = 108.0
+text = "You have probably 
+noticed a vine acts like a spring.
+Use it to your advantage."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
