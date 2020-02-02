@@ -31,7 +31,7 @@ mode = 2
 position = Vector2( 740, 370 )
 
 [node name="PlantSeed2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 740, 180 )
+position = Vector2( 489.404, 234.022 )
 
 [node name="Darkness" parent="." instance=ExtResource( 7 )]
 position = Vector2( 160, -160 )

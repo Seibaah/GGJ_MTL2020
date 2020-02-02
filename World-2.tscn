@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World_complete.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Light/2DLight.png" type="Texture" id=5]
@@ -17,9 +16,6 @@ tile_data = PoolIntArray( -2883584, 1, 0, -2883583, 1, 0, -2883582, 1, 0, -27525
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Player" parent="TileMap" instance=ExtResource( 2 )]
-position = Vector2( 47.7136, 381.708 )
 
 [node name="World_complete" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 986.08, 281.737 )

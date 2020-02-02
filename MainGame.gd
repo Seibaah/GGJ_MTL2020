@@ -1,6 +1,6 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
-var world_scenes_array = ["World-1", "World-2", "World-3", "World-4"]
+var world_scenes_array = ["World-4", "World-2", "World-1", "World-4"]
 
 var current_player = null
 var current_world_id = 0
@@ -130,7 +130,7 @@ func _on_ask_next_level():
 
 func _on_player_planting(player, orientation):
 	#find the closest node to the player, and seed it
-
+	if selected_seed!=null:
 		if orientation == "up":
 			selected_seed.grow_plant(0)
 		if orientation == "right":
