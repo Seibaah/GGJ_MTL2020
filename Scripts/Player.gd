@@ -45,6 +45,8 @@ func _physics_process(_delta):
 		
 	move_and_slide(Vector2(motion.x, motion.y), UP)
 			
+	if is_on_ceiling():
+		motion.y = 0
 	if is_on_floor() and motion.y >= 5:
 		motion.y = 5
 	if motion.y > MAX_FALL_SPEED:
