@@ -32,14 +32,14 @@ loop = true
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk_reverse",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
