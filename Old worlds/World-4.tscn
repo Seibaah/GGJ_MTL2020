@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://trunk.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Backgrounds/platform1.png" type="Texture" id=3]
 [ext_resource path="res://PlantSeeds/PlantSeed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Tree/treeD2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Backgrounds/platform2.png" type="Texture" id=6]
 [ext_resource path="res://tiles.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/Light/2DLight.png" type="Texture" id=8]
 [ext_resource path="res://Invisible_collision.gd" type="Script" id=9]
@@ -13,6 +15,8 @@
 [ext_resource path="res://Assets/Tree/treeD7.png" type="Texture" id=13]
 [ext_resource path="res://MainMenu/Tree.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Tree/treeD4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Backgrounds/platform5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Backgrounds/platform3.png" type="Texture" id=17]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 88.8795
@@ -42,6 +46,8 @@ height = 247.3
 radius = 33.7198
 height = 147.358
 
+[sub_resource type="TileSet" id=8]
+
 [node name="World-4" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -52,9 +58,10 @@ tile_data = PoolIntArray( -2686987, 1, 0, -2686986, 1, 0, -2686985, 1, 0, -26869
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 777.626, -549.59 )
+position = Vector2( 353.416, -36.3094 )
 scale = Vector2( 6.12792, 7.34246 )
 texture = ExtResource( 8 )
+offset = Vector2( 66.3056, -68.1855 )
 energy = 0.8
 mode = 2
 
@@ -247,5 +254,176 @@ shadow_color = Color( 0, 0, 0, 1 )
 
 [node name="StartPosition2D" type="Position2D" parent="."]
 position = Vector2( -212.797, 133.287 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2138.57, 1156.5 )
+scale = Vector2( 1.16479, 0.873562 )
+texture = ExtResource( 3 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource( 8 )
+format = 1
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 518.39, -341.829 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Roc1" type="Node2D" parent="."]
+
+[node name="Sprite11" type="Sprite" parent="Roc1"]
+position = Vector2( 518.39, -341.829 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3" type="Sprite" parent="Roc1"]
+position = Vector2( 703.794, -159.824 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite4" type="Sprite" parent="Roc1"]
+position = Vector2( 701.092, -102.005 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite13" type="Sprite" parent="Roc1"]
+position = Vector2( 445.684, 219.285 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite14" type="Sprite" parent="Roc1"]
+position = Vector2( 502.542, 282.46 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Sprite17" type="Sprite" parent="Roc1"]
+position = Vector2( 398.857, 505.618 )
+scale = Vector2( 0.719061, 0.709033 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Sprite5" type="Sprite" parent="Roc1"]
+position = Vector2( 588.103, -71.2319 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite10" type="Sprite" parent="Roc1"]
+position = Vector2( 579.511, -286.268 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite6" type="Sprite" parent="Roc1"]
+position = Vector2( 561.679, -167.929 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite9" type="Sprite" parent="Roc1"]
+position = Vector2( 651.379, -236.555 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite12" type="Sprite" parent="Roc1"]
+position = Vector2( 547.089, -227.369 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite16" type="Sprite" parent="Roc1"]
+position = Vector2( 599.8, 422.393 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite15" type="Sprite" parent="Roc1"]
+position = Vector2( 572.879, 517.895 )
+scale = Vector2( 0.736131, 0.73143 )
+texture = ExtResource( 17 )
+
+[node name="Sprite8" type="Sprite" parent="Roc1"]
+position = Vector2( 450.905, -214.941 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Sprite7" type="Sprite" parent="Roc1"]
+position = Vector2( 446.042, -280.324 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Roc2" type="Node2D" parent="."]
+
+[node name="Sprite3" type="Sprite" parent="Roc2"]
+position = Vector2( 373.016, -164.758 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Sprite8" type="Sprite" parent="Roc2"]
+position = Vector2( 373.016, -164.758 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Sprite4" type="Sprite" parent="Roc2"]
+position = Vector2( 473.375, -103.157 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+
+[node name="Sprite6" type="Sprite" parent="Roc2"]
+position = Vector2( 318.089, -79.0296 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite13" type="Sprite" parent="Roc2"]
+position = Vector2( 325.652, 77.2725 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite15" type="Sprite" parent="Roc2"]
+position = Vector2( 490.329, 445.29 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite5" type="Sprite" parent="Roc2"]
+position = Vector2( 516.495, -30.7753 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite7" type="Sprite" parent="Roc2"]
+position = Vector2( 516.495, -30.7753 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite14" type="Sprite" parent="Roc2"]
+position = Vector2( 505.04, 357.29 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite12" type="Sprite" parent="Roc2"]
+position = Vector2( 483.722, 73.2159 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+
+[node name="Sprite10" type="Sprite" parent="Roc2"]
+position = Vector2( 362.493, -3.56818 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite9" type="Sprite" parent="Roc2"]
+position = Vector2( 362.493, -3.56818 )
+scale = Vector2( 0.634579, 0.660192 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Sprite11" type="Sprite" parent="Roc2"]
+position = Vector2( 446.138, 144.28 )
+scale = Vector2( 0.46968, 0.485542 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="Roc3" type="Node2D" parent="."]
 [connection signal="body_entered" from="Trunk/Trunk/RigidBody2D2" to="Trunk/Trunk/RigidBody2D2" method="_on_RigidBody2D_body_entered"]
 [connection signal="body_shape_entered" from="Trunk/Trunk/RigidBody2D2" to="Trunk/Trunk/RigidBody2D2" method="_on_RigidBody2D_body_shape_entered"]
