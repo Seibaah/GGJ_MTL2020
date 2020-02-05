@@ -1,7 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Music.gd" type="Script" id=1]
+<<<<<<< HEAD
 [ext_resource path="res://Assets/sfx/JULES SONG (1).wav" type="AudioStream" id=2]
+=======
+[ext_resource path="res://Music/219017__foolboymedia__forest-song.wav" type="AudioStream" id=2]
+>>>>>>> cce65eea84f38cce97d604e5944f195aa6a56561
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,5 +16,9 @@ zoom = Vector2( 3, 3 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+<<<<<<< HEAD
 volume_db = 4.0
 autoplay = true
+=======
+volume_db = 24.0
+>>>>>>> cce65eea84f38cce97d604e5944f195aa6a56561

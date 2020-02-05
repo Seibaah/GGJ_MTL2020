@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Tree/tree.png" type="Texture" id=1]
+[ext_resource path="res://MainMenu/Final.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Tree/treeff.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tree/white_tree.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/vine.005.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/vine.004.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/vine.006.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/vine.002.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/vine.001.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/vine.003.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/vine.007.png" type="Texture" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 266.091
+height = 213.844
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "final",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "repair",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "final",
+"speed": 5.0
+} ]
+
+[node name="Tree" type="Node2D"]
+position = Vector2( 594.225, 295.885 )
+script = ExtResource( 2 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="Master_tree" type="AnimatedSprite" parent="RigidBody2D"]
+position = Vector2( 0.148193, 7.48584 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+animation = "final"
+
+[node name="Vine" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( -309.003, -95.4274 )
+frames = SubResource( 3 )
+animation = "repair"
+
+[node name="Vine2" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( 270.377, -88.6111 )
+frames = SubResource( 4 )
+animation = "final"
+
+[node name="Vine4" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( -429.423, -240.841 )
+frames = SubResource( 3 )
+animation = "repair"
+
+[node name="Vine3" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( 358.989, -245.385 )
+frames = SubResource( 4 )
+animation = "final"
+
+[node name="Vine8" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( -306.485, -95.4274 )
+frames = SubResource( 3 )
+animation = "repair"
+flip_v = true
+
+[node name="Vine7" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( 272.895, -88.6111 )
+frames = SubResource( 4 )
+animation = "final"
+flip_v = true
+
+[node name="Vine6" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( -426.906, -240.841 )
+frames = SubResource( 3 )
+animation = "repair"
+flip_v = true
+
+[node name="Vine5" type="AnimatedSprite" parent="RigidBody2D"]
+visible = false
+position = Vector2( 361.506, -245.385 )
+frames = SubResource( 4 )
+animation = "final"
+flip_v = true
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_entered"]
