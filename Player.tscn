@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/spiritSpritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Light/2DLight.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.9746, 55.8843 )
@@ -95,4 +96,7 @@ shape = SubResource( 5 )
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

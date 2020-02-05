@@ -1,6 +1,8 @@
 extends Node2D
 
 func _on_RigidBody2D_body_entered(body):
+	
+
 	$RigidBody2D/AnimatedSprite.play("final")
 	
 	
@@ -23,6 +25,12 @@ func _on_RigidBody2D_body_entered(body):
 	$RigidBody2D/AnimatedSprite7.play("final")
 	#$RigidBody2D/AnimatedSprite8.play("final")
 	#$RigidBody2D/AnimatedSprite9.play("final")
+		
+	if body.is_in_group("player"):
+		get_tree().change_scene("res://Credits_scene.tscn")
 	
 	
-	
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Credits_scene.tscn")

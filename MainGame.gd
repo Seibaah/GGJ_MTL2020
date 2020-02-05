@@ -1,12 +1,7 @@
 extends Node2D
 var player_scene = preload("res://Player.tscn")
 
-<<<<<<< HEAD
-var world_scenes_array = [ "Talos-1","World-1","World-4","World-3", "World-2" ]
-=======
-var world_scenes_array = [ "World-3","World-2", "World-3" ]
->>>>>>> Den4
-
+var world_scenes_array = [ "World-2","World-2","World-3", "World-4", "World-5" ]
 
 var current_player = null
 var current_world_id = 0
